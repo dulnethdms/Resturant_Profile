@@ -78,12 +78,7 @@ export default function Navbar() {
             >
               <Lock className="h-4 w-4" />
             </Link>
-            <button
-              onClick={openReserve}
-              className="hidden rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-6 py-2.5 text-[13px] font-semibold tracking-[0.14em] text-ink-950 uppercase transition-all duration-300 hover:shadow-[0_14px_36px_-12px_rgba(228,180,98,0.65)] sm:block"
-            >
-              Reserve a Table
-            </button>
+            
             <button
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle navigation"
