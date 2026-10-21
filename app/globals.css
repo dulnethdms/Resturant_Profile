@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #08080a;
+  --color-ink-900: #0b0c10;
+  --color-ink-850: #101218;
+  --color-ink-800: #14171e;
+  --color-ink-700: #1b1f28;
+  --color-ink-600: #262b36;
+  --color-ink-500: #3a4150;
+
+  --color-gold-100: #fbf1dc;
+  --color-gold-200: #f5e2b8;
+  --color-gold-300: #eecb8a;
+  --color-gold-400: #e4b462;
+  --color-gold-500: #d59f43;
+  --color-gold-600: #b8822f;
+  --color-gold-700: #8f6324;
+
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-ping-slow: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-shimmer: shimmer 2.2s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
+  @keyframes ping-soft {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    75%,
+    100% {
+      transform: scale(2.1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: #d4d4d8;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-gold-500);
+    color: #0b0c10;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink-900);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink-600);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-700);
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-gradient-gold {
+  background: linear-gradient(120deg, #f5e2b8 0%, #e4b462 45%, #b8822f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility card-shimmer {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(245, 226, 184, 0.16) 48%,
+      transparent 62%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.75s ease;
+    pointer-events: none;
+  }
+  &:hover::after {
+    transform: translateX(120%);
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-ink-800) 25%,
+    var(--color-ink-700) 37%,
+    var(--color-ink-800) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
