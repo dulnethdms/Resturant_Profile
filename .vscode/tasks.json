@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start restaurant localhost",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run restaurant app on localhost 3000",
+			"type": "shell",
+			"command": "npm run dev -- --hostname 0.0.0.0 --port 3000",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run restaurant app on localhost 3001",
+			"type": "shell",
+			"command": "npm run dev -- --hostname 0.0.0.0 --port 3001",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stop stale Next server",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \"Stop-Process -Id 2404 -Force\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start clean restaurant localhost",
+			"type": "shell",
+			"command": "npm run dev -- --hostname 0.0.0.0 --port 3000",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
