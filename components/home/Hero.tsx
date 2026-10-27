@@ -10,7 +10,7 @@ import { useReserve } from "../ReserveProvider";
 import StatusBadge from "../StatusBadge";
 import { ease } from "../Reveal";
 
-const WORDS = ["Dining", "after", "dark,"];
+const WORDS = ["City", "View", "Cafe", ];
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-[11px] text-gold-400 uppercase sm:text-xs"
         >
-          Est. {RESTAURANT.founded} · SoHo, New York
+          Est. 2026· Kegalle, Sri Lanka
         </motion.p>
 
         <h1 className="mt-6 max-w-4xl font-display leading-[0.95] text-neutral-50">
@@ -73,7 +73,7 @@ export default function Hero() {
             transition={{ duration: 0.85, delay: 0.66, ease }}
             className="inline-block text-5xl italic text-gradient-gold sm:text-7xl lg:text-8xl"
           >
-            plated with intent.
+            Experience.
           </motion.span>
         </h1>
 
@@ -99,16 +99,8 @@ export default function Hero() {
             <span className="relative z-10">Explore Menu</span>
             <span className="absolute inset-0 -translate-x-full bg-white/30 transition-transform duration-500 group-hover:translate-x-full" />
           </Link>
-          <button
-            onClick={openReserve}
-            className="rounded-full border border-gold-400/50 px-9 py-4 text-sm font-semibold tracking-[0.16em] text-gold-200 uppercase backdrop-blur-sm transition-all duration-300 hover:border-gold-300 hover:bg-gold-400/10"
-          >
-            Reserve a Table
-          </button>
-          <div className="hidden items-center gap-2 text-sm text-neutral-400 sm:flex">
-            <Star className="h-4 w-4 fill-gold-400 text-gold-400" />
-            <span>4.9 · 1,240 diners</span>
-          </div>
+          
+          
         </motion.div>
       </motion.div>
 

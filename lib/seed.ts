@@ -5,10 +5,10 @@ export const RESTAURANT = {
   tagline: "Kitchen & Bar",
   headline: "Dining after dark, plated with intent.",
   subline:
-    "A modern European kitchen where fire, season and restraint meet — served nightly beneath warm amber light.",
+    "A modern Cafe Experience at the peek of the city.",
   phone: "+1 (212) 555-0147",
-  address: "48 Lantern Row, SoHo, New York, NY 10012",
-  email: "hello@nocturnekitchen.com",
+  address: "Kegalle, Sri Lanka",
+  email: "hello@belmontcafe.com",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=48+Lantern+Row+SoHo+New+York",
   founded: 2016,
 } as const;

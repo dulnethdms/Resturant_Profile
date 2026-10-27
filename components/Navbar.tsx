@@ -11,8 +11,8 @@ import { useReserve } from "./ReserveProvider";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
-  { href: "/#story", label: "Our Story" },
-  { href: "/#visit", label: "Visit" },
+  
+  
 ];
 
 export default function Navbar() {
@@ -49,7 +49,7 @@ export default function Navbar() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 sm:px-8">
           <Link href="/" className="group flex items-baseline gap-1.5">
             <span className="font-display text-xl tracking-[0.32em] text-gold-200 sm:text-2xl">
-              NOCTURNE
+              Belmont
             </span>
             <span className="h-1.5 w-1.5 rounded-full bg-gold-500 transition-transform duration-300 group-hover:scale-150" />
           </Link>
@@ -116,18 +116,7 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.button
-                initial={{ opacity: 0, y: 22 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                onClick={() => {
-                  setMobileOpen(false);
-                  openReserve();
-                }}
-                className="mt-4 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-9 py-3.5 text-sm font-semibold tracking-[0.16em] text-ink-950 uppercase"
-              >
-                Reserve a Table
-              </motion.button>
+              
               <Link
                 href="/admin"
                 onClick={() => setMobileOpen(false)}
